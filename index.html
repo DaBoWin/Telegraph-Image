@@ -8,11 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var waitForElement = setInterval(function() {
         var inputElement = document.getElementById('url-content');
         if (inputElement) {
-            clearInterval(waitForElement); // 清除定时器
-
             // 输入框元素已经准备好，执行你的代码
             var url = inputElement.value.trim(); // 获取输入框的值
             if (url !== '') {
+              clearInterval(waitForElement); // 清除定时器
                 var altText = url.split('/').pop(); // 获取图片链接的最后一部分作为 Alt Text
                 var markdownImage = `![${altText}](${url})`;
                 console.log('生成的 Markdown 格式的图片链接：', markdownImage);
