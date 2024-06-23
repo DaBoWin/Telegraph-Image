@@ -29,11 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // 创建复制文本按钮元素
                 var copyButton = document.createElement('button');
-                copyButton.textContent = '复制文本';
+                copyButton.textContent = '复制Markdown';
                 copyButton.addEventListener('click', function() {
                     // 复制文本按钮的点击事件处理函数
                     markdownInput.select();
                     document.execCommand('copy');
+                    alert('已复制Markdown');
                     console.log('已复制文本:', markdownInput.value);
                 });
 
